@@ -24,7 +24,8 @@ spec:
         io.kompose.service: envoy
     spec:
       containers:
-        - image: envoyproxy/envoy-dev:latest
+        - image: gshilo/grpc-proxy
+          imagePullPolicy: Never
           name: envoy
           ports:
             - containerPort: 8080

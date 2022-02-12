@@ -2,8 +2,8 @@ import { status } from '@grpc/grpc-js'
 import { ProtoCatCall, CallType } from "protocat";
 import { ServiceImplementationExtended } from "protocat/dist/lib/server/call";
 import { UserModel } from "./user.entity";
-import { IUserSvcService } from "./proto/user/user_grpc_pb";
-import { RegisterRequest, UserResponse, LoginRequest, VerifyRequest, VerifyResponse, GetUserRequest, GetUsersResponse } from "./proto/user/user_pb";
+import { IUserSvcService } from "../proto/user/user_grpc_pb";
+import { RegisterRequest, UserResponse, LoginRequest, VerifyRequest, VerifyResponse, GetUserRequest, GetUsersResponse } from "../proto/user/user_pb";
 import * as timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb'
 
 const timestamp = new timestamp_pb.Timestamp();
