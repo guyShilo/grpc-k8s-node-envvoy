@@ -1,0 +1,7 @@
+FROM node:lts-alpine
+RUN npm install -g npm@latest
+RUN mkdir -p /var/www/server
+WORKDIR /var/www/server
+ADD . /var/www/server
+RUN npm install
+CMD npm run start

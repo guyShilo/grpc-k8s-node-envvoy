@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -c -f /Users/metropolinet/Desktop/Projects/go-try/docker-compose.yml
+    kompose.version: 1.26.1 (HEAD)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: envoy
+  name: envoy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: envoy
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -c -f /Users/metropolinet/Desktop/Projects/go-try/docker-compose.yml
+        kompose.version: 1.26.1 (HEAD)
+      creationTimestamp: null
+      labels:
+        io.kompose.service: envoy
+    spec:
+      containers:
+        - image: envoyproxy/envoy-dev:latest
+          name: envoy
+          ports:
+            - containerPort: 8080
+          resources: {}
+      restartPolicy: Always
+status: {}

@@ -1,0 +1,14 @@
+apiVersion: v1
+data:
+  DB_HOST: cluster0.xwe1l.mongodb.net
+  DB_NAME: grpc
+  DB_PASSWORD: ajioI4BVpbScu8sf
+  DB_USERNAME: gshilo
+  HOST: 0.0.0.0
+  PORT: "9090"
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: server-env-server
+  name: env-server

@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  envoy:
+    image: envoyproxy/envoy-dev:latest
+    build: envoy
+    ports:
+      - 8080:8080
+  server:
+    image: gshilo/grpc-server
+    build: server
+    restart: always
+    hostname: server
+    ports:
+      - 9090:9090
+    env_file:
+      - .env.server
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge

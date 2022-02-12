@@ -1,0 +1,8 @@
+name: /Users/metropolinet/Desktop/Projects/go-try/docker-compose
+description: A generated Helm Chart for /Users/metropolinet/Desktop/Projects/go-try/docker-compose from Skippbox Kompose
+version: 0.0.1
+apiVersion: v1
+keywords:
+  - /Users/metropolinet/Desktop/Projects/go-try/docker-compose
+sources:
+home:

@@ -1,0 +1,63 @@
+// protos/user/user.proto
+
+syntax = "proto3";
+
+package user;
+
+service UserSvc {
+    rpc register (RegisterRequest) returns (UserResponse);
+    rpc login (LoginRequest) returns (UserResponse);
+    rpc verify (VerifyRequest) returns (VerifyResponse);
+    rpc getUser (GetUserRequest) returns (UserResponse);
+    // rpc getUsers (GetUsersRequest) returns (stream GetUsersResponse);
+    rpc getAllUsers (Empty) returns (stream GetUsersResponse) {}
+}
+message Empty {
+    
+}
+
+message GetUsersResponse{
+    UserResponse user = 1;
+}
+
+message VerifyRequest {
+    string token = 1;
+}
+
+message GetUserRequest {
+    string user_id = 1;
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message RegisterRequest {
+    string name = 1;
+    string email = 2;
+    string password = 3;
+    repeated string permissions = 4;
+}
+
+message TokenRecord {
+    string token = 1;
+    bool is_active = 2; 
+    string last_used = 3;
+}
+
+message UserResponse {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+    repeated string permissions = 4;
+    repeated TokenRecord tokens = 5;
+    // google.protobuf.Timestamp created_at = 6;
+    // google.protobuf.Timestamp updated_at = 7;
+}
+
+message VerifyResponse {
+    string id = 1;
+    string name = 2;
+    string email = 3;
+}
