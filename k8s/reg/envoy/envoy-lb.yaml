@@ -21,12 +21,12 @@ spec:
   ports:
   - nodePort: 30580
     name: proxy
-    port: 8080
+    port: 10001
     protocol: TCP
     targetPort: 8080
   - nodePort: 30581
     name: admin-dashboard
-    port: 9901
+    port: 10000
     protocol: TCP
     targetPort: 9901
   selector:

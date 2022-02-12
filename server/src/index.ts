@@ -1,7 +1,7 @@
 import { onError, ProtoCat } from 'protocat'
 
 import { connectDB } from './db';
-import { UserSvcService } from './users/proto/user/user_grpc_pb';
+import { UserSvcService } from './proto/user/user_grpc_pb';
 import UserServiceImplementations from './users/user.service';
 
 const app = new ProtoCat()

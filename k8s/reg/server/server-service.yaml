@@ -9,24 +9,21 @@ metadata:
   resourceVersion: "3495"
   uid: edc31e58-75ab-4f68-b54a-5a6bfc13b9c9
 spec:
-  allocateLoadBalancerNodePorts: true
-  clusterIP: 10.100.226.243
+  clusterIP: 10.97.224.52
   clusterIPs:
-  - 10.100.226.243
-  externalTrafficPolicy: Cluster
-  internalTrafficPolicy: Cluster
+  - 10.97.224.52
   ipFamilies:
   - IPv4
   ipFamilyPolicy: SingleStack
   ports:
-  - nodePort: 30204
+  - name: "http"
     port: 9090
     protocol: TCP
     targetPort: 9090
   selector:
     io.kompose.service: server
   sessionAffinity: None
-  type: LoadBalancer
+  type: ClusterIP
 status:
   loadBalancer:
     ingress:
